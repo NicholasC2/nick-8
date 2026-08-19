@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "npm run build:node && npm run build:browser",
+    "build:node": "tsc",
+    "build:browser": "esbuild src/index.ts --bundle --platform=browser --outfile=dist/cpu.browser.js"
+  },
+  "dependencies": {
+    "esbuild": "^0.28.2",
+    "tsx": "^4.23.12",
+    "typescript": "^7.0.2"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}
