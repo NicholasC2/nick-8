@@ -39,8 +39,6 @@ export class CPU {
 
         const opcode = this.program[this.IP];
 
-        console.log(opcode)
-
         switch (opcode) {
             case 0x00: {
                 this.IP += 1;
@@ -223,9 +221,9 @@ export class CPU {
     }
 
     private readAddress(offset: number): number {
-        const low = this.program[offset];
-        const high = this.program[offset + 1];
+        const high = this.program[offset];
+        const low = this.program[offset + 1];
 
-        return low | (high << 8);
+        return (high << 8) | low;
     }
 }
